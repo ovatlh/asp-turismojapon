@@ -1,0 +1,35 @@
+﻿@model IEnumerable<aspTurismoJapon.Models.Atracciones>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<div class="titleAtracciones">
+    @if (ViewBag.TipoAtraccionSeleccionado == null)
+    {
+        <h2>Atracciones que puedes visitar en Japón</h2>
+    }
+    else
+    {
+        <h2>@ViewBag.TipoAtraccionSeleccionado que puedes visitar en Japón</h2>
+    }
+</div>
+
+<div class="listaAtracciones">
+    @foreach (var item in Model)
+    {
+        <div class="cardAtraccion">
+            <section class="imageAtraccion">
+                <img src="~/images/atracciones/@(item.Id).jpg" alt="@item.Titulo">
+            </section>
+            <section class="textAtraccion">
+                <section class="tipoAtraccion">
+                    <img src="~/images/tipoatraccion/@(item.IdTipo).jpg" alt="@item.IdTipoNavigation.Tipo">
+                </section>
+                <h4>Atracciones</h4>
+                <h3>@item.Titulo</h3>
+                <a href="~/Atraccion/@item.Titulo.Replace(" ", "_")">Ver Atracción</a>
+            </section>
+        </div>
+    }
+</div>

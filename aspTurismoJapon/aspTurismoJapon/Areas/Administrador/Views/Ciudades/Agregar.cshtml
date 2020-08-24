@@ -1,0 +1,65 @@
+﻿@model aspTurismoJapon.Models.ViewModels.Ciudades_ViewModel
+@{
+    ViewData["Title"] = "Agregar";
+    Layout = "_Layout";
+}
+
+@*Activar TinyMCE*@
+
+<script src="~/js/jquery-2.1.1.min.js"></script>
+<script src="~/js/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        height: 600,
+        plugins: [
+          'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+          'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+          'save table directionality emoticons template paste pageembed'
+        ],
+        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image hr pageembed | print media fullpage | forecolor backcolor emoticons | code preview fullscreen'
+      });
+</script>
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Ciudades</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/Ciudades">Agregando Ciudad</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<section class="class_agregar_editar">
+    <form action="~/Administrador/Ciudades/Agregar" method="post" enctype="multipart/form-data">
+        <label for="">Nombre:</label>
+        <input type="text" asp-for="Nombre">
+
+        <label for="">Portada:</label>
+        <input type="file" asp-for="PortadaFile">
+
+        <label for="">Contenido:</label>
+        <textarea cols="30" rows="10" asp-for="Contenido"></textarea>
+
+        <section class="class_agregar_editar_acciones">
+            <table>
+                <td>
+                    <input type="submit" value="Agregar">
+                </td>
+                <td>
+                    <a href="~/Administrador/Ciudades">Cancelar</a>
+                </td>
+            </table>
+        </section>
+    </form>
+</section>
+
+<section class="class_errores">
+    <h1>Errores:</h1>
+
+    @Html.ValidationSummary()
+</section>

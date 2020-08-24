@@ -1,0 +1,123 @@
+﻿@model aspTurismoJapon.Models.Ciudades
+@{
+    ViewData["Title"] = "Ciudad";
+    Layout = "_Layout";
+}
+
+<div class="contenidoCiudad">
+    <div class="portada">
+        <img src="~/images/ciudades/@(Model.Id).jpg" alt="@Model.Nombre">
+        <section>
+            <h3>Ciudad de</h3>
+            <h2>@Model.Nombre</h2>
+        </section>
+    </div>
+
+    <div class="datosCiudad">
+        <section class="infCiudad">
+            <h3>Información sobre @Model.Nombre</h3>
+            <hr>
+
+            @Html.Raw(Model.Contenido)
+        </section>
+
+        <section class="infCiudad">
+            <h3>Atracciones en @Model.Nombre</h3>
+            <hr>
+            <p>
+                La ciudad de @Model.Nombre cuenta con varias atracciones como las siguientes:
+            </p>
+            <div class="cardsAtracciones">
+                @foreach (var item in Model.Atracciones)
+                {
+                    <div>
+                        <img src="~/images/atracciones/@(item.Id).jpg" alt="@item.Titulo">
+                        <a href="~/Atraccion/@item.Titulo.Replace(" ", "_")">@item.Titulo</a>
+                    </div>
+                }
+                @*<div>
+                        <img src="images/tokyo-isla-tsukishima.jpg" alt="">
+                        <a href="Atraccion.html">Isla de Tsukishima</a>
+                    </div>
+                    <div>
+                        <img src="images/tokyo-isla-tsukishima.jpg" alt="">
+                        <a href="Atraccion.html">Isla de Tsukishima</a>
+                    </div>
+                    <div>
+                        <img src="images/tokyo-isla-tsukishima.jpg" alt="">
+                        <a href="Atraccion.html">Isla de Tsukishima</a>
+                    </div>
+                    <div>
+                        <img src="images/tokyo-isla-tsukishima.jpg" alt="">
+                        <a href="Atraccion.html">Isla de Tsukishima</a>
+                    </div>
+                    <div>
+                        <img src="images/tokyo-isla-tsukishima.jpg" alt="">
+                        <a href="Atraccion.html">Isla de Tsukishima</a>
+                    </div>
+                    <div>
+                        <img src="images/tokyo-isla-tsukishima.jpg" alt="">
+                        <a href="Atraccion.html">Isla de Tsukishima</a>
+                    </div>
+                    <div>
+                        <img src="images/tokyo-isla-tsukishima.jpg" alt="">
+                        <a href="Atraccion.html">Isla de Tsukishima</a>
+                    </div>*@
+
+            </div>
+            <h3>Comidas populares de @Model.Nombre</h3>
+            <hr>
+            <p>En @Model.Nombre puedes encontrar estas deliciosas comidas:</p>
+            <div class="cardsComidas">
+                @foreach (var item in Model.Comidas)
+                {
+                    <div>
+                        <img src="~/images/comidas/@(item.Id).jpg" alt="@item.Nombre">
+                        <section>
+                            <a href="~/Comida/@item.Nombre.Replace(" ", "_")">@item.Nombre</a>
+                        </section>
+                    </div>
+                }
+
+                @*<div>
+                        <img src="images/okonomiyaki.jpg" alt="">
+                        <section>
+                            <a href="Comida.html">Okonomiyaki (Pizza Japonesa)</a>
+                        </section>
+                    </div>
+                    <div>
+                        <img src="images/okonomiyaki.jpg" alt="">
+                        <section>
+                            <a href="Comida.html">Okonomiyaki (Pizza Japonesa)</a>
+                        </section>
+                    </div>
+                    <div>
+                        <img src="images/okonomiyaki.jpg" alt="">
+                        <section>
+                            <a href="Comida.html">Okonomiyaki (Pizza Japonesa)</a>
+                        </section>
+                    </div>
+                    <div>
+                        <img src="images/okonomiyaki.jpg" alt="">
+                        <section>
+                            <a href="Comida.html">Okonomiyaki (Pizza Japonesa)</a>
+                        </section>
+                    </div>
+                    <div>
+                        <img src="images/okonomiyaki.jpg" alt="">
+                        <section>
+                            <a href="Comida.html">Okonomiyaki (Pizza Japonesa)</a>
+                        </section>
+                    </div>*@
+            </div>
+        </section>
+
+        @*<section class="infCiudad">
+                <h3>Mapa de Tokyo</h3>
+                <hr>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61667.57872221838!2d139.72101213329555!3d35.
+                        67693137899041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2s
+                        Estaci%C3%B3n%20de%20Tokio!5e0!3m2!1ses!2smx!4v1575227930457!5m2!1ses!2smx"></iframe>
+            </section>*@
+    </div>
+</div>

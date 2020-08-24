@@ -1,0 +1,134 @@
+﻿@* Layout Administrador *@
+@inject aspTurismoJapon.Services.ServicioListas servicioListas
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Turismo en Japon - Administrador</title>
+    <link rel="stylesheet" href="~/StyleSheet_Admin.css">
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="~/Home">Turismo Japon</a></h1>
+
+        <nav>
+            <ul>
+                <li><a href="~/Administrador/Home">Inicio</a></li>
+                <li>
+                    <a href="~/Administrador/Ciudades">Ciudades</a>
+                    <ul>
+                        @foreach (var item in servicioListas.GetAllCiudades_Nombre())
+                        {
+                            @*<li><a href="~/Ciudad/@item.Nombre.Replace(" ", "_")">@item.Nombre</a></li>*@
+                            <li><a href="~/Ciudad/@item.Replace(" ", "_")">@item</a></li>
+                        }
+                        @*<li><a href="~/Ciudades/Ciudad/Tokyo">Tokyo</a></li>
+                            <li><a href="~/Ciudades/Ciudad/Tokyo">Tokyo</a></li>*@
+                    </ul>
+                    @*<ul>
+                            <li>
+                                <a href="">Ciudad - 01</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 02</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 03</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 04</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 05</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 06</a>
+                            </li>
+                        </ul>*@
+                </li>
+                <li>
+                    <a href="~/Administrador/Comidas">Comidas</a>
+                    <ul>
+                        @foreach (var item in servicioListas.GetAllComidas_Nombre())
+                        {
+                            @*<li><a href="~/Comida/@item.Nombre.Replace(" ", "_")">@item.Nombre</a></li>*@
+                            <li><a href="~/Comida/@item.Replace(" ", "_")">@item</a></li>
+                        }
+                        @*<li><a href="~/Comidas/Comida/Okonomiyaki">Okonomiyaki</a></li>
+                            <li><a href="~/Comidas/Comida/Okonomiyaki">Okonomiyaki</a></li>*@
+                    </ul>
+                    @*<ul>
+                            <li>
+                                <a href="">Ciudad - 01</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 02</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 03</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 04</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 05</a>
+                            </li>
+                            <li>
+                                <a href="">Ciudad - 06</a>
+                            </li>
+                        </ul>*@
+                </li>
+                <li>
+                    <a href="~/Administrador/Atracciones">Atracciones</a>
+                    <ul>
+                        @foreach (var item in servicioListas.GetAllTipoAtracciones_Tipo())
+                        {
+                            @*<li><a href="~/Atracciones/@item.Tipo.Replace(" ", "_")">@item.Tipo</a></li>*@
+                            <li><a href="~/Atracciones/@item.Replace(" ", "_")">@item</a></li>
+                        }
+                        @*<li><a href="~/Atracciones/Atraccion/Titulo">Jardínes</a></li>
+                            <li><a href="~/Atracciones/Atraccion/Titulo">Jardínes</a></li>*@
+                    </ul>
+                    @*<ul>
+                            <li>
+                                <a href="">Tipo - 01</a>
+                            </li>
+                            <li>
+                                <a href="">Tipo - 02</a>
+                            </li>
+                            <li>
+                                <a href="">Tipo - 03</a>
+                            </li>
+                            <li>
+                                <a href="">Tipo - 04</a>
+                            </li>
+                            <li>
+                                <a href="">Tipo - 05</a>
+                            </li>
+                            <li>
+                                <a href="">Tipo - 06</a>
+                            </li>
+                        </ul>*@
+                </li>
+                <li><a href="~/Administrador/TipoAtraccion">TipoAtraccion</a></li>
+                <li><a href="~/Administrador/Usuarios">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <h6>Programacion Web - Proyecto Final - Turismo en Japon</h6>
+    </footer>
+
+</body>
+
+</html>

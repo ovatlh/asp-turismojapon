@@ -1,0 +1,57 @@
+﻿@model aspTurismoJapon.Areas.Administrador.Models.ViewModels.ExportarViewModel
+@{
+    ViewData["Title"] = "Exportar";
+    Layout = "_Layout";
+}
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Exportar</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/">Exportando registros</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<section class="class_agregar_editar">
+    <form method="post" action="~/Administrador/Home/Exportar"
+          enctype="multipart/form-data">
+
+        <label>Seleccione el tipo de registro que desea exportar:</label>
+        <select asp-for="Registro">
+            <option value="0">Seleccione un tipo de registro</option>
+            <option value="1">Ciudad</option>
+            <option value="2">Comida</option>
+            <option value="3">Tipo de Atraccion</option>
+            <option value="4">Atraccion</option>
+        </select>
+
+        <label>Seleccione el formato de salida:</label>
+        <select asp-for="Tipo">
+            <option value="0">Seleccione un formato de salida</option>
+            <option value="1">PDF</option>
+            <option value="2">Excel</option>
+        </select>
+
+        <section class="class_agregar_editar_acciones">
+            <table>
+                <td>
+                    <input type="submit" value="Exportar" />
+                </td>
+                <td>
+                    <a href="~/Administrador">Cancelar</a>
+                </td>
+            </table>
+        </section>
+    </form>
+</section>
+
+<section class="class_errores">
+    <h1>Advertencias:</h1>
+
+    @Html.ValidationSummary()
+</section>

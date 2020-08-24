@@ -1,0 +1,209 @@
+﻿@model IEnumerable<aspTurismoJapon.Models.Usuarios>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+    int x = 1;
+}
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Usuarios</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/Usuarios/Agregar">Agregar nuevo Usuario</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<section class="class_contenido">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Contraseña</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@x</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Contrasena</td>
+                    <td>@item.Rol</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="~/Administrador/Usuarios/Editar/@item.Id">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="~/Administrador/Usuarios/Eliminar/@item.Id">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                x++;
+            }
+            @*<tr>
+                    <td>2</td>
+                    <td>Usuario - 02</td>
+                    <td>Contraseña - 02</td>
+                    <td>Rol - 02</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="ciudades_Editar.html">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="comidas_Eliminar.html">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Usuario - 03</td>
+                    <td>Contraseña - 03</td>
+                    <td>Rol - 03</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="ciudades_Editar.html">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="comidas_Eliminar.html">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Usuario - 04</td>
+                    <td>Contraseña - 04</td>
+                    <td>Rol - 04</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="ciudades_Editar.html">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="comidas_Eliminar.html">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Usuario - 05</td>
+                    <td>Contraseña - 05</td>
+                    <td>Rol - 05</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="ciudades_Editar.html">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="comidas_Eliminar.html">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Usuario - 06</td>
+                    <td>Contraseña - 06</td>
+                    <td>Rol - 06</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="ciudades_Editar.html">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="comidas_Eliminar.html">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Usuario - 07</td>
+                    <td>Contraseña - 07</td>
+                    <td>Rol - 07</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="ciudades_Editar.html">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="comidas_Eliminar.html">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Usuario - 08</td>
+                    <td>Contraseña - 08</td>
+                    <td>Rol - 08</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="ciudades_Editar.html">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="comidas_Eliminar.html">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Usuario - 09</td>
+                    <td>Contraseña - 09</td>
+                    <td>Rol - 09</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="ciudades_Editar.html">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="comidas_Eliminar.html">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Usuario - 10</td>
+                    <td>Contraseña - 10</td>
+                    <td>Rol - 10</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="ciudades_Editar.html">Editar</a>
+
+                            </td>
+                            <td>
+                                <a href="comidas_Eliminar.html">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>*@
+        </tbody>
+    </table>
+</section>

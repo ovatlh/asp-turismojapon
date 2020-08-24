@@ -1,0 +1,223 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    background-image: url("~/Monte_Fuji_(Filtro).jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login {
+    width: 400px;
+    height: 500px;
+    background-color: #F8F8F8;
+    position: relative;
+    top: 60px;
+    left: 60px;
+    /* opacity: 40%; */
+}
+
+    .login h1 {
+        font-family: 'Segoe UI';
+        font-size: 30px;
+        font-weight: normal;
+        color: #303030;
+        position: relative;
+        top: 20px;
+        margin: 0px 20px;
+    }
+
+    .login hr {
+        color: #D2625A;
+        position: relative;
+        top: 20px;
+        margin: 0px 20px;
+    }
+
+    .login p {
+        font-family: 'Calibri Light';
+        font-size: 16px;
+        position: relative;
+        top: 25px;
+        margin: 0px 20px;
+    }
+
+.form {
+    position: relative;
+    top: 50px;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+    .group input {
+        font-family: 'Segoe UI';
+        font-size: 16px;
+        padding: 10px 10px 10px 5px;
+        -webkit-appearance: none;
+        display: block;
+        background: #FAFAFA;
+        color: #636363;
+        width: 300px;
+        margin: 0px 30px;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #757575;
+    }
+
+input:focus {
+    outline: none;
+}
+
+.group label {
+    font-family: 'Tahoma';
+    font-size: 14px;
+    font-weight: normal;
+    color: #999999;
+    position: absolute;
+    left: 30px;
+    top: 5px;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+input:focus ~ label, input.used ~ label {
+    top: -8px;
+    transform: scale(.75);
+    left: 20px;
+    color: #D2625A;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 315px;
+    margin: 0px 30px;
+}
+
+    .bar:before, .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #D2625A;
+        transition: all 0.2s ease;
+    }
+
+    .bar:before {
+        left: 50%;
+    }
+
+    .bar:after {
+        right: 50%;
+    }
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #D2625A;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+.button {
+    width: 80%;
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0px 10%;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #D2625A;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+    .button:focus {
+        outline: 0;
+    }
+
+.buttonEntrar {
+    background: #D2625A;
+    text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+
+    .buttonEntrar:hover {
+        background: #D2625A;
+    }
+
+.ripples {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+}
+
+.ripplesCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.ripples.is-active .ripplesCircle {
+    animation: ripples .4s ease-in;
+}
+
+@keyframes ripples {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 200%;
+        padding-bottom: 200%;
+        opacity: 0;
+    }
+}

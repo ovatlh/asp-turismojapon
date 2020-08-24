@@ -1,0 +1,954 @@
+﻿@font-face {
+    font-family: 'Raleway Light';
+    src: url(~/fonts/Raleway-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Nunito Light';
+    src: url(~/fonts/Nunito-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Han Wang Hei';
+    src: url(~/fonts/HanWangHei-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Usuazi Hosomozi';
+    src: url(~/fonts/Usuazi-Hosomozi.ttf);
+}
+
+@font-face {
+    font-family: 'Sister Europe';
+    src: url(~/fonts/Sister-Europe.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    background-color: #F8F8F8;
+}
+
+/* Header Global */
+header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    background-color: #A41623;
+    z-index: 1;
+}
+
+    header a img {
+        width: 60px;
+        height: 60px;
+        margin-left: 100px;
+    }
+
+    header h1 a {
+        height: 60px;
+        width: 300px;
+        line-height: 60px;
+        font-family: 'Gill Sans MT';
+        font-size: 30px;
+        font-weight: lighter;
+        text-decoration: none;
+        color: #FFFFFF;
+        margin-left: 30px;
+    }
+
+    header h1 img {
+        width: 30px;
+        height: 30px;
+        margin: 0px;
+    }
+
+    header nav {
+        margin-left: 300px;
+    }
+
+        header nav ul {
+            list-style: none;
+        }
+
+            header nav ul li {
+                width: 150px;
+                height: 100%;
+                float: left;
+            }
+
+                header nav ul li .seccion {
+                    transition: 0.3s;
+                    border-top: 3px solid transparent;
+                }
+
+                    header nav ul li .seccion:hover {
+                        transition: 0.3s;
+                        border-top: 3px solid #D2625A;
+                    }
+
+                header nav ul li ul {
+                    display: none;
+                }
+
+    header ul li:hover ul {
+        display: block;
+    }
+
+    header nav ul li a {
+        width: 150px;
+        height: 100%;
+        line-height: 60px;
+        font-family: 'Raleway Light';
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #DED5C4;
+        display: block;
+    }
+
+    header nav ul li ul li a {
+        height: 35px;
+        line-height: 35px;
+        font-family: 'Gill Sans MT';
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #232322;
+        background-color: #DED5C4;
+    }
+
+    header nav ul li ul li:hover a {
+        color: #DED5C4;
+        background-color: #D2625A;
+    }
+
+/* Footer Global */
+footer {
+    width: calc(100%-20px);
+    height: 25px;
+    position: relative;
+    clear: both;
+    top: 0px;
+    background-color: #D91E36;
+    font-family: 'Raleway Light';
+    font-size: 15px;
+    font-weight: lighter;
+    text-align: center;
+    color: #DED5C4;
+    padding: 12px 10px;
+}
+
+/* Main Home */
+.slider {
+    width: 100%;
+    height: 580px;
+    overflow: hidden;
+    /* position: absolute; */
+    position: relative;
+    /* z-index: -1; */
+}
+
+input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slide {
+    width: 20%;
+    transition: 0.5s;
+}
+
+    .slide img {
+        width: 100%;
+        height: 140%;
+        transform: translateY(-100px);
+        overflow: hidden;
+    }
+
+.navegacion {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+#r1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#r2:checked ~ .s1 {
+    margin-left: -20%;
+}
+
+#r3:checked ~ .s1 {
+    margin-left: -40%;
+}
+
+#r4:checked ~ .s1 {
+    margin-left: -60%;
+}
+
+#r5:checked ~ .s1 {
+    margin-left: -80%;
+}
+
+.circulo {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+    .circulo:hover {
+        background: #FFFFFF;
+    }
+
+.boton {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    left: 48%;
+    top: 10px;
+    cursor: pointer;
+    background-color: #D2625A;
+}
+
+.button {
+    font-size: 30px;
+    color: #F8F8F8;
+    margin: 0px auto;
+    transition: 0.5s;
+}
+
+.boton:hover {
+    transform: scale(1.25, 1.25);
+    transition: 0.5s;
+}
+
+.informacion {
+    width: 70%;
+    position: relative;
+    top: 10px;
+    margin: 0px 15% 30px 15%;
+}
+
+    .informacion h2 {
+        font-family: 'Raleway Light';
+        text-align: center;
+        text-transform: uppercase;
+        color: #A41623;
+        padding: 10px 5px;
+    }
+
+    .informacion hr {
+        color: #D2625A;
+    }
+
+    .informacion p {
+        font-family: 'Segoe UI';
+        font-size: 16px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .informacion h3 {
+        font-family: 'Raleway Light';
+        font-size: 17px;
+        font-weight: lighter;
+        text-align: center;
+        text-transform: uppercase;
+        color: #A41623;
+    }
+
+/* Main Ciudades */
+.listaCiudades {
+    width: calc(100% - 120px);
+    margin: 90px 60px;
+    z-index: -1;
+}
+
+.cardCiudad {
+    width: 45%;
+    height: 380px;
+    float: left;
+    margin-bottom: 40px;
+}
+
+    .cardCiudad:nth-child(n) {
+        margin-right: 10%;
+    }
+
+    .cardCiudad:nth-child(2n) {
+        margin-right: 0%;
+    }
+
+    .cardCiudad .fondoCiudad {
+        height: 380px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 19px 38px #404040, 0 15px 12px #404040;
+    }
+
+.fondoCiudad img {
+    width: 120%;
+    height: 100%;
+    overflow: hidden;
+    transform: translateX(-50px);
+}
+
+.cardCiudad .fondoCiudad:hover .datos {
+    transform: translateY(0);
+}
+
+.fondoCiudad .datos {
+    width: 100%;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    transition: transform 0.3s;
+    transform: translateY(calc(50px + 4em));
+}
+
+.datos .contenido {
+    padding: 1em;
+    position: relative;
+    background-color: #393939;
+    transition-duration: 0.3s;
+}
+
+.datos:hover .contenido {
+    filter: opacity(70%);
+    transition-duration: 0.3s;
+}
+
+.contenido .seccion {
+    font-family: 'Gill Sans MT';
+    font-size: 13px;
+}
+
+.contenido .ciudad {
+    font-family: 'Han Wang Hei';
+    font-size: 30px;
+    font-weight: lighter;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+.contenido .ayuda {
+    height: 50px;
+    font-family: 'Gill Sans MT';
+    font-size: 16px;
+    margin: 0;
+}
+
+.contenido .botonMas {
+    width: 100px;
+    font-family: 'Calibri Light';
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    color: #FFFFFF;
+    display: block;
+    position: relative;
+    margin: 1em auto 1em;
+}
+
+    .contenido .botonMas::after {
+        content: '\2192';
+        position: absolute;
+        top: 40%;
+        right: 0;
+        opacity: 0;
+        transform: translate(0, -40%);
+        transition: all 0.3s;
+    }
+
+    .contenido .botonMas:hover::after {
+        transform: translate(5px, -40%);
+        opacity: 1;
+    }
+
+/* Main Ciudad */
+.contenidoCiudad {
+    width: 100%;
+    margin: 60px auto;
+}
+
+    .contenidoCiudad .portada {
+        width: 100%;
+        height: 500px;
+    }
+
+.portada img {
+    width: 100%;
+    height: 100%;
+}
+
+.portada section {
+    width: 90%;
+    height: 100px;
+    position: absolute;
+    top: 460px;
+    background: linear-gradient(90deg, #000000, transparent)
+}
+
+    .portada section h3 {
+        font-family: 'Gill Sans MT';
+        font-size: 16px;
+        font-weight: lighter;
+        color: #FFFFFF;
+        margin: 10px 20px;
+    }
+
+    .portada section h2 {
+        font-family: 'Nunito Light';
+        font-size: 40px;
+        color: #FFFFFF;
+        margin: 5px 20px;
+    }
+
+.contenidoCiudad .datosCiudad {
+    width: 95%;
+    margin: 30px auto;
+}
+
+.datosCiudad .infCiudad {
+    width: 95%;
+    float: none;
+    clear: both;
+    margin: 20px auto;
+}
+
+.infCiudad h3 {
+    font-family: 'Nunito Light';
+    font-size: 25px;
+    clear: both;
+    color: #A41623;
+}
+
+.infCiudad hr {
+    height: 2px;
+    background-color: #222222;
+}
+
+.infCiudad p {
+    font-family: 'Calibri';
+    font-size: 18px;
+    text-align: justify;
+    margin-top: 5px;
+}
+
+.infCiudad .cardsAtracciones {
+    width: 100%;
+    /*float: none;
+    clear: both;*/ 
+}
+
+.cardsAtracciones div {
+    width: 20%;
+    height: 280px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    float: left;
+    margin: 20px 0px;
+    transition-duration: 0.3s;
+}
+
+    .cardsAtracciones div:nth-child(n) {
+        margin-right: 6.6%;
+    }
+
+    .cardsAtracciones div:nth-child(4n) {
+        margin-right: 0;
+    }
+
+    .cardsAtracciones div:hover {
+        transition-duration: 0.3s;
+        box-shadow: -5px 5px 8px 0px #666666;
+    }
+
+    .cardsAtracciones div img {
+        width: 100%;
+        height: 60%;
+        border-radius: 8px 8px 0px 0px;
+        border-bottom: 2px solid #D91E36;
+        margin-bottom: 5px;
+    }
+
+    .cardsAtracciones div a {
+        font-family: 'Agency FB';
+        font-size: 22px;
+        text-decoration: none;
+        color: #D91E36;
+        margin: 0px 10px 10px 10px;
+    }
+
+.cardsComidas {
+    width: 100%;
+    /* float: none;
+    clear: both; */
+}
+
+    .cardsComidas div {
+        width: 30%;
+        height: 150px;
+        float: left;
+        overflow: hidden;
+        margin: 20px 0px;
+        background-color: #FFFFFF;
+        transition-duration: 0.3s;
+    }
+
+        .cardsComidas div:hover {
+            transition-duration: 0.3s;
+            box-shadow: -5px 5px 8px 0px #666666;
+        }
+
+        .cardsComidas div:nth-child(n) {
+            margin-right: 5%;
+        }
+
+        .cardsComidas div:nth-child(3n) {
+            margin-right: 0%;
+        }
+
+    .cardsComidas img {
+        width: 60%;
+        height: 100%;
+        overflow: hidden;
+        float: left;
+    }
+
+    .cardsComidas section {
+        width: calc(40% - 20px);
+        height: calc(100% - 20px);
+        float: left;
+        position: relative;
+        top: 10px;
+        bottom: 10px;
+        left: 10px;
+        right: -10px;
+    }
+
+        .cardsComidas section a {
+            font-family: 'Usuazi Hosomozi';
+            font-size: 23px;
+            text-decoration: none;
+            color: #A41623;
+        }
+
+.infCiudad iframe {
+    width: 800px;
+    height: 450px;
+    border: 0px;
+    margin: 30px 0px 30px 30px;
+}
+
+/* Main Atracciones */
+.titleAtracciones h2 {
+    font-family: 'Nunito Light';
+    font-size: 25px;
+    color: #232322;
+    position: absolute;
+    top: 80px;
+    margin: 0px 30px;
+}
+
+.listaAtracciones {
+    width: calc(100% - 60px);
+    margin: 130px 0px 30px 30px;
+}
+
+.cardAtraccion {
+    width: 30%;
+    height: 330px;
+    float: left;
+    position: relative;
+    margin-right: 5%;
+    margin-bottom: 40px;
+    transition: all .2s ease-in-out;
+    background-color: #FFFFFF;
+}
+
+    .cardAtraccion:nth-child(3n) {
+        margin-right: 0%;
+    }
+
+    .cardAtraccion:hover {
+        transition: all .2s ease-in-out;
+        box-shadow: -3px 7px 10px 0px rgba(0,0,1,0.5);
+    }
+
+.imageAtraccion {
+    height: 220px;
+    opacity: .8;
+    transition: all .2s ease-in-out;
+}
+
+    .imageAtraccion img {
+        width: 100%;
+        height: 100%;
+    }
+
+.cardAtraccion:hover .imageAtraccion {
+    transition: all .2s ease-in-out;
+    opacity: 1;
+}
+
+.tipoAtraccion {
+    width: 60px;
+    height: 60px;
+    /* border-radius: 30px; */
+    position: relative;
+    top: -30px;
+    left: calc(100% - 80px);
+    /* background-color: #D91E36; */
+    transition: all .2s ease-in-out;
+}
+
+    .tipoAtraccion img {
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        margin: 5px;
+    }
+
+    .tipoAtraccion:hover {
+        transition: all .2s ease-in-out;
+        transform: scale(1.15, 1.15)
+    }
+
+.textAtraccion {
+    width: 100%;
+    height: 80px;
+}
+
+    .textAtraccion h4 {
+        font-family: 'Gill Sans MT';
+        font-size: 14px;
+        font-weight: lighter;
+        color: #666666;
+        display: inline-block;
+        position: absolute;
+        top: 230px;
+        margin: 0px 20px;
+    }
+
+    .textAtraccion h3 {
+        font-family: 'Usuazi Hosomozi';
+        font-size: 18px;
+        color: #D91E36;
+        position: absolute;
+        top: 250px;
+        margin: 0px 20px;
+    }
+
+    .textAtraccion a {
+        font-family: 'Raleway Light';
+        font-size: 12px;
+        font-weight: bolder;
+        text-decoration: none;
+        color: #000000;
+        position: absolute;
+        top: 290px;
+        margin: 10px 25px;
+        transition: all .2s ease-in-out;
+    }
+
+        .textAtraccion a:hover {
+            transition: all .2s ease-in-out;
+            transform: scale(1.15, 1.15);
+            color: #A41623;
+        }
+
+/* Main Atracción */
+.contenidoAtraccion {
+    width: 100%;
+    margin: 80px 0px;
+}
+
+.portadaAtraccion {
+    width: 60%;
+    height: 450px;
+    position: relative;
+    top: 0px;
+    float: left;
+    overflow: hidden;
+    box-shadow: -5px 10px 7px 0px #707070;
+    margin: 20px;
+}
+
+    .portadaAtraccion img {
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+        transition: all 500ms ease-in-out;
+    }
+
+    .portadaAtraccion:hover img {
+        transform: scale(1.2);
+    }
+
+.datosAtraccion {
+    width: 33%;
+    height: 450px;
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    margin: 20px;
+}
+
+    .datosAtraccion h2 {
+        font-family: 'Usuazi Hosomozi';
+        font-size: 50px;
+        text-align: center;
+        color: #A41623;
+        margin: 20px 10px;
+    }
+
+    .datosAtraccion span {
+        font-family: 'Agency FB';
+        font-size: 20px;
+        text-align: center;
+        color: #777777;
+        display: block;
+        margin: 5px 20px;
+    }
+
+    .datosAtraccion a {
+        font-family: 'Han Wang Hei';
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #232322;
+        display: block;
+        margin: 0px 20px 20px;
+        transition: all 500ms ease-in-out;
+    }
+
+        .datosAtraccion a:hover {
+            transition: all 500ms ease-in-out;
+            color: #D2625A;
+            transform: scale(1.2);
+        }
+
+.infAtraccion {
+    width: calc(100% - 40px);
+    margin: 30px 0px 20px 20px;
+}
+
+    .infAtraccion h3 {
+        font-family: 'Raleway Light';
+        font-size: 23px;
+        color: #A41623;
+        margin: 20px 20px 3px 20px;
+    }
+
+    .infAtraccion hr {
+        color: #232322;
+        margin: 0px 20px;
+    }
+
+    .infAtraccion p {
+        font-family: 'Segoe UI';
+        font-size: 16px;
+        text-align: justify;
+        display: block;
+        float: none;
+        margin: 5px 20px 0px 20px;
+    }
+
+    .infAtraccion h4 {
+        font-family: 'Han Wang Hei';
+        font-size: 15px;
+        margin: 5px 20px 0px 20px;
+    }
+
+/* Main Comidas */
+.titleComidas {
+    font-family: 'Usuazi Hosomozi';
+    font-size: 20px;
+    color: #D91E36;
+    position: relative;
+    top: 70px;
+    margin: 10px 30px;
+}
+
+.listaComidas {
+    width: 80%;
+    position: relative;
+    top: 20px;
+    margin: 60px auto;
+}
+
+.cardComida {
+    width: 90%;
+    height: 300px;
+    box-shadow: 5px 8px 5px 0px #707070;
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin: 0px 5%;
+}
+
+    .cardComida:nth-child(n) {
+        margin-bottom: 40px;
+    }
+
+    .cardComida:last-child() {
+        margin-bottom: 0px;
+    }
+
+.imageComida {
+    width: 60%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+    float: left;
+    overflow: hidden;
+}
+
+    .imageComida img {
+        width: 100%;
+        height: 120%;
+        overflow: hidden;
+        transform: translateY(-50px);
+    }
+
+.textComida {
+    width: 40%;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+    .textComida h3 {
+        font-family: 'Sister Europe';
+        font-size: 32px;
+        text-align: center;
+        letter-spacing: 3px;
+        color: #D2625A;
+        position: absolute;
+        top: 0px;
+        left: 60%;
+        margin: 20px;
+    }
+
+    .textComida p {
+        width: 30%;
+        font-family: 'Raleway Light';
+        font-size: 16px;
+        text-align: center;
+        color: #393939;
+        position: absolute;
+        top: 100px;
+        left: 60%;
+        margin: 20px 40px;
+    }
+
+    .textComida section {
+        width: 200px;
+        height: 45px;
+        border-radius: 10px;
+        background-color: #A41623;
+        position: absolute;
+        top: 220px;
+        left: 65%;
+        margin: 0px 40px;
+        transition: all 500ms ease-in-out;
+    }
+
+        .textComida section:hover {
+            transition: all 500ms ease-in-out;
+            transform: scale(1.1, 1.1);
+            background-color: #D91E36;
+            cursor: pointer;
+        }
+
+    .textComida a {
+        font-family: 'Calibri Light';
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 45px;
+        color: #F8F8F8;
+        margin: 0px 48px;
+    }
+
+/* Main Comida */
+.contenidoComida {
+    width: 60%;
+    box-shadow: -10px 8px 5px 0px #606060;
+    background-color: #FFFFFF;
+    position: relative;
+    top: 20px;
+    margin: 60px auto;
+}
+
+    .contenidoComida h3 {
+        font-family: 'Han Wang Hei';
+        font-size: 40px;
+        text-align: center;
+        color: #D91E36;
+        position: relative;
+        top: 10px;
+        margin: 20px 0px;
+    }
+
+.portadaComida {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+    .portadaComida img {
+        width: 100%;
+        height: 110%;
+        overflow: hidden;
+        transform: translateY(-50px);
+    }
+
+.descripcionComida {
+    width: 100%;
+    margin: 20px 0px;
+    position: relative;
+    bottom: 30px;
+}
+
+    .descripcionComida img {
+        width: 40%;
+        height: 30px;
+        margin: 20px 30% 0px 30%;
+    }
+
+    .descripcionComida h4 {
+        font-family: 'Usuazi Hosomozi';
+        font-size: 30px;
+        text-align: center;
+        color: #D2625A;
+    }
+
+    .descripcionComida p {
+        font-family: 'Segoe UI';
+        font-size: 16px;
+        text-align: justify;
+        margin: 0px 20px
+    }

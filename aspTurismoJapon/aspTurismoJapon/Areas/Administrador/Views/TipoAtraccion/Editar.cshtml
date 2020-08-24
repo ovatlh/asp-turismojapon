@@ -1,0 +1,47 @@
+﻿@model aspTurismoJapon.Models.ViewModels.TipoAtraccion_ViewModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "_Layout";
+}
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Tipo de Atracciones</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/TipoAtraccion">Editando Tipo de Atraccion</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<section class="class_agregar_editar">
+    <form action="~/Administrador/TipoAtraccion/Editar" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+
+        <label for="">Tipo:</label>
+        <input type="text" asp-for="Tipo">
+
+        <label for="">Icono:</label>
+        <input type="file" asp-for="IconoFile">
+
+        <section class="class_agregar_editar_acciones">
+            <table>
+                <td>
+                    <input type="submit" value="Editar">
+                </td>
+                <td>
+                    <a href="~/Administrador/TipoAtraccion">Cancelar</a>
+                </td>
+            </table>
+        </section>
+    </form>
+</section>
+
+<section class="class_errores">
+    <h1>Errores:</h1>
+
+    @Html.ValidationSummary()
+</section>

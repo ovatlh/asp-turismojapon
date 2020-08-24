@@ -1,0 +1,80 @@
+﻿@model aspTurismoJapon.Models.ViewModels.Comidas_ViewModel
+@inject aspTurismoJapon.Services.ServicioListas servicio
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "_Layout";
+}
+
+@*Activar TinyMCE*@
+
+<script src="~/js/jquery-2.1.1.min.js"></script>
+<script src="~/js/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        height: 600,
+        plugins: [
+          'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+          'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+          'save table directionality emoticons template paste pageembed'
+        ],
+        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image hr pageembed | print media fullpage | forecolor backcolor emoticons | code preview fullscreen'
+      });
+</script>
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Comidas</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/Comidas">Editando Comida</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<section class="class_agregar_editar">
+    <form action="~/Administrador/Comidas/Editar" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+
+        <label for="">Nombre:</label>
+        <input type="text" asp-for="Nombre">
+
+        <label for="">Portada:</label>
+        <input type="file" asp-for="PortadaFile">
+
+        <label for="">Descripción:</label>
+        <textarea cols="30" rows="10" asp-for="Descripcion"></textarea>
+
+        <label for="">Ciudad:</label>
+        <select asp-for="IdCiudad"
+                asp-items="@(new SelectList(servicio.GetAllCiudades(), "Id", "Nombre", ViewBag.IdCiudad))">
+            <option value="0">Seleccione una Ciudad</option>
+            @*<option>Ciudad - 01</option>
+            <option>Ciudad - 02</option>
+            <option>Ciudad - 03</option>
+            <option>Ciudad - 04</option>
+            <option>Ciudad - 05</option>
+            <option>Ciudad - 06</option>*@
+        </select>
+
+        <section class="class_agregar_editar_acciones">
+            <table>
+                <td>
+                    <input type="submit" value="Editar">
+                </td>
+                <td>
+                    <a href="~/Administrador/Comidas">Cancelar</a>
+                </td>
+            </table>
+        </section>
+    </form>
+</section>
+
+<section class="class_errores">
+    <h1>Errores:</h1>
+
+    @Html.ValidationSummary()
+</section>

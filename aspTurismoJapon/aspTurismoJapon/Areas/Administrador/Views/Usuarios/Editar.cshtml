@@ -1,0 +1,66 @@
+﻿@model aspTurismoJapon.Models.ViewModels.Usuarios_ViewModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "_Layout";
+}
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Usuarios</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/Usuarios">Editando Usuario</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<section class="class_agregar_editar">
+    <form action="~/Administrador/Usuarios/Editar" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <label for="">Nombre:</label>
+        <input type="text" asp-for="Nombre">
+
+        <label for="">Contraseña:</label>
+        <input type="text" asp-for="Contrasena">
+
+        <label for="">Tipo:</label>
+        <select asp-for="Rol">
+            <option value="user">Seleccione un Tipo (default user)</option>
+            <option value="user">Usuario</option>
+            <option value="Admin">Administrador</option>
+        </select>
+
+        <section class="class_agregar_editar_acciones">
+            <table>
+                <td>
+                    <input type="submit" value="Editar">
+                </td>
+                <td>
+                    <a href="~/Administrador/Usuarios">Cancelar</a>
+                </td>
+            </table>
+        </section>
+    </form>
+</section>
+
+<section class="class_errores">
+    <h1>Errores:</h1>
+    @*<ul>
+            <li>Error - 01</li>
+            <li>Error - 02</li>
+            <li>Error - 03</li>
+            <li>Error - 04</li>
+            <li>Error - 05</li>
+            <li>Error - 06</li>
+            <li>Error - 07</li>
+            <li>Error - 08</li>
+            <li>Error - 09</li>
+            <li>Error - 10</li>
+        </ul>*@
+
+    @Html.ValidationSummary()
+</section>

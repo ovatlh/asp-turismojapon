@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutAccount";
+}
+
+<div class="login">
+    <h1>Bienvenido</h1>
+    <hr>
+    <p>Inicie sesión para administrar los contenidos</p>
+
+    <form action="~/Account/Index" method="post" class="form">
+        <div class="group">
+            <input type="text" name="user"><span class="highlight"></span><span class="bar"></span>
+            <label>Nombre de usuario</label>
+        </div>
+        <div class="group">
+            <input type="password" name="password"><span class="highlight"></span><span class="bar"></span>
+            <label>Contraseña</label>
+        </div>
+
+        <input type="submit" tabindex="submit" value="Iniciar Sesion" class="button buttonEntrar" />
+
+        @*<button type="button" class="button buttonEntrar">
+            Entrar
+            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>*@
+
+        @Html.ValidationSummary()
+    </form>
+</div>

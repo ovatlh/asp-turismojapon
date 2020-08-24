@@ -1,0 +1,92 @@
+﻿@model aspTurismoJapon.Models.ViewModels.Atracciones_ViewModel
+@inject aspTurismoJapon.Services.ServicioListas servicio
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "_Layout";
+}
+
+@*Activar TinyMCE*@
+
+<script src="~/js/jquery-2.1.1.min.js"></script>
+<script src="~/js/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        height: 600,
+        plugins: [
+            'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+            'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+            'save table directionality emoticons template paste pageembed'
+        ],
+        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image hr pageembed | print media fullpage | forecolor backcolor emoticons | code preview fullscreen'
+    });
+</script>
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Atracciones</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/Atracciones">Editando Atraccion</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<section class="class_agregar_editar">
+    <form action="~/Administrador/Atracciones/Editar" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+
+        <label for="">Titulo:</label>
+        <input type="text" asp-for="Titulo">
+
+        <label for="">Portada:</label>
+        <input type="file" asp-for="PortadaFile">
+
+        <label for="">Tipo:</label>
+        <select asp-for="IdTipo"
+                asp-items="@(new SelectList(servicio.GetAllTipoAtracciones(), "Id", "Tipo", ViewBag.IdTipo))">
+            <option value="">Seleccione un Tipo</option>
+            @*<option>Tipo - 01</option>
+            <option>Tipo - 02</option>
+            <option>Tipo - 03</option>
+            <option>Tipo - 04</option>
+            <option>Tipo - 05</option>
+            <option>Tipo - 06</option>*@
+        </select>
+
+        <label for="">Ciudad:</label>
+        <select asp-for="IdCiudad"
+                asp-items="@(new SelectList(servicio.GetAllCiudades(), "Id", "Nombre", ViewBag.IdCiudad))">
+            <option value="0">Seleccione una Ciudad</option>
+            @*<option>Ciudad - 01</option>
+            <option>Ciudad - 02</option>
+            <option>Ciudad - 03</option>
+            <option>Ciudad - 04</option>
+            <option>Ciudad - 05</option>
+            <option>Ciudad - 06</option>*@
+        </select>
+
+        <label for="">Contenido:</label>
+        <textarea cols="30" rows="10" asp-for="Contenido"></textarea>
+
+        <section class="class_agregar_editar_acciones">
+            <table>
+                <td>
+                    <input type="submit" value="Editar">
+                </td>
+                <td>
+                    <a href="~/Administrador/Atracciones">Cancelar</a>
+                </td>
+            </table>
+        </section>
+    </form>
+</section>
+
+<section class="class_errores">
+    <h1>Errores:</h1>
+
+    @Html.ValidationSummary()
+</section>

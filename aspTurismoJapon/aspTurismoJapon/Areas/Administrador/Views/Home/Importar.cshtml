@@ -1,0 +1,54 @@
+﻿@model  aspTurismoJapon.Areas.Administrador.Models.ViewModels.ImportarViewModel
+@{
+    ViewData["Title"] = "Importar";
+    Layout = "_Layout";
+}
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Importar</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/">Importando registros</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<section class="class_agregar_editar">
+    <form method="post" action="~/Administrador/Home/Importar"
+          enctype="multipart/form-data">
+
+        <label>Seleccione el tipo de registro que desea importar:</label>
+        <select asp-for="Tipo">
+            <option value="0">Seleccione un tipo de registro</option>
+            <option value="1">Ciudad</option>
+            <option value="2">Comida</option>
+            <option value="3">Tipo de Atraccion</option>
+            <option value="4">Atraccion</option>
+        </select>
+
+        <label>Seleccione el archivo de Excel o CSV a importar:</label>
+        <input asp-for="Archivo"
+               accept=".csv,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" type="file" />
+
+        <section class="class_agregar_editar_acciones">
+            <table>
+                <td>
+                    <input type="submit" value="Importar" />
+                </td>
+                <td>
+                    <a href="~/Administrador">Cancelar</a>
+                </td>
+            </table>
+        </section>
+    </form>
+</section>
+
+<section class="class_errores">
+    <h1>Advertencias:</h1>
+
+    @Html.ValidationSummary()
+</section>

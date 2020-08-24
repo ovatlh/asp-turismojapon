@@ -1,0 +1,208 @@
+﻿@model IEnumerable<aspTurismoJapon.Models.Atracciones>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+    int x = 1;
+}
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Atracciones</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/Atracciones/Agregar">Agregar nueva Atraccion</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<section class="class_contenido">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Titulo</th>
+                <th>Ciudad</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@x</td>
+                    <td>@item.Titulo</td>
+                    <td>@item.IdCiudadNavigation.Nombre</td>
+                    <td>@item.IdTipoNavigation.Tipo</td>
+                    <td>
+                        <table>
+                            <td>
+                                <a href="~/Administrador/Atracciones/Editar/@item.Id">Editar</a>
+                            </td>
+                            <td>
+                                <a href="~/Administrador/Atracciones/Eliminar/@item.Id">Eliminar</a>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                x++;
+            }
+            @*<tr>
+            <td>2</td>
+            <td>Atraccion - 02</td>
+            <td>Ciudad - 02</td>
+            <td>Tipo - 02</td>
+            <td>
+                <table>
+                    <td>
+                        <a href="ciudades_Editar.html">Editar</a>
+
+                    </td>
+                    <td>
+                        <a href="comidas_Eliminar.html">Eliminar</a>
+                    </td>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Atraccion - 03</td>
+            <td>Ciudad - 03</td>
+            <td>Tipo - 03</td>
+            <td>
+                <table>
+                    <td>
+                        <a href="ciudades_Editar.html">Editar</a>
+
+                    </td>
+                    <td>
+                        <a href="comidas_Eliminar.html">Eliminar</a>
+                    </td>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Atraccion - 04</td>
+            <td>Ciudad - 04</td>
+            <td>Tipo - 04</td>
+            <td>
+                <table>
+                    <td>
+                        <a href="ciudades_Editar.html">Editar</a>
+
+                    </td>
+                    <td>
+                        <a href="comidas_Eliminar.html">Eliminar</a>
+                    </td>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Atraccion - 05</td>
+            <td>Ciudad - 05</td>
+            <td>Tipo - 05</td>
+            <td>
+                <table>
+                    <td>
+                        <a href="ciudades_Editar.html">Editar</a>
+
+                    </td>
+                    <td>
+                        <a href="comidas_Eliminar.html">Eliminar</a>
+                    </td>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Atraccion - 06</td>
+            <td>Ciudad - 06</td>
+            <td>Tipo - 06</td>
+            <td>
+                <table>
+                    <td>
+                        <a href="ciudades_Editar.html">Editar</a>
+
+                    </td>
+                    <td>
+                        <a href="comidas_Eliminar.html">Eliminar</a>
+                    </td>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Atraccion - 07</td>
+            <td>Ciudad - 07</td>
+            <td>Tipo - 07</td>
+            <td>
+                <table>
+                    <td>
+                        <a href="ciudades_Editar.html">Editar</a>
+
+                    </td>
+                    <td>
+                        <a href="comidas_Eliminar.html">Eliminar</a>
+                    </td>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Atraccion - 08</td>
+            <td>Ciudad - 08</td>
+            <td>Tipo - 08</td>
+            <td>
+                <table>
+                    <td>
+                        <a href="ciudades_Editar.html">Editar</a>
+
+                    </td>
+                    <td>
+                        <a href="comidas_Eliminar.html">Eliminar</a>
+                    </td>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Atraccion - 09</td>
+            <td>Ciudad - 09</td>
+            <td>Tipo - 09</td>
+            <td>
+                <table>
+                    <td>
+                        <a href="ciudades_Editar.html">Editar</a>
+
+                    </td>
+                    <td>
+                        <a href="comidas_Eliminar.html">Eliminar</a>
+                    </td>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Atraccion - 10</td>
+            <td>Ciudad - 10</td>
+            <td>Tipo - 10</td>
+            <td>
+                <table>
+                    <td>
+                        <a href="ciudades_Editar.html">Editar</a>
+
+                    </td>
+                    <td>
+                        <a href="comidas_Eliminar.html">Eliminar</a>
+                    </td>
+                </table>
+            </td>
+        </tr>*@
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,20 @@
+﻿@model aspTurismoJapon.Models.Comidas
+@{
+    ViewData["Title"] = "Comida";
+    Layout = "_Layout";
+}
+
+<div class="contenidoComida">
+    <h3>@Model.Nombre</h3>
+    <section class="portadaComida">
+        <img src="~/images/comidas/@(Model.Id).jpg" alt="@Model.Nombre">
+    </section>
+    <section class="descripcionComida">
+        <img src="~/images/divisor.png" alt="">
+        <h4>Descripción</h4>
+
+        <div>
+            @Html.Raw(Model.Descripcion)
+        </div>
+    </section>
+</div>

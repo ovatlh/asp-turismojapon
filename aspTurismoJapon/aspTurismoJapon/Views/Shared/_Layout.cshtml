@@ -1,0 +1,85 @@
+﻿@inject aspTurismoJapon.Services.ServicioListas servicioListas
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="~/main.js"></script>
+    <title>Home - Turismo en Japón</title>
+    <link rel="stylesheet" href="~/StyleSheet.css">
+</head>
+
+<body>
+    <header>
+        <a href="Home.html">
+            <img src="~/images/maneki-neko.png" alt="">
+        </a>
+        <h1>
+            <a href="~/Home">Turismo en Japón</a>
+            <img src="~/images/sakura.png" alt="">
+        </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="~/Ciudades" class="seccion">Ciudades</a>
+                    <ul>
+                        @foreach (var item in servicioListas.GetAllCiudades_Nombre())
+                        {
+                            @*<li><a href="~/Ciudad/@item.Nombre.Replace(" ", "_")">@item.Nombre</a></li>*@
+                            <li><a href="~/Ciudad/@item.Replace(" ", "_")">@item</a></li>
+                        }
+                        @*<li><a href="~/Ciudades/Ciudad/Tokyo">Tokyo</a></li>
+                            <li><a href="~/Ciudades/Ciudad/Tokyo">Tokyo</a></li>*@
+                    </ul>
+                </li>
+                <li>
+                    <a href="~/Atracciones" class="seccion">Atracciones</a>
+                    <ul>
+                        @foreach (var item in servicioListas.GetAllTipoAtracciones_Tipo())
+                        {
+                            @*<li><a href="~/Atracciones/@item.Tipo.Replace(" ", "_")">@item.Tipo</a></li>*@
+                            <li><a href="~/Atracciones/@item.Replace(" ", "_")">@item</a></li>
+                        }
+                        @*<li><a href="~/Atracciones/Atraccion/Titulo">Jardínes</a></li>
+                            <li><a href="~/Atracciones/Atraccion/Titulo">Jardínes</a></li>*@
+                    </ul>
+                </li>
+                <li>
+                    <a href="~/Comidas" class="seccion">Comidas</a>
+                    <ul>
+                        @foreach (var item in servicioListas.GetAllComidas_Nombre())
+                        {
+                            @*<li><a href="~/Comida/@item.Nombre.Replace(" ", "_")">@item.Nombre</a></li>*@
+                            <li><a href="~/Comida/@item.Replace(" ", "_")">@item</a></li>
+                        }
+                        @*<li><a href="~/Comidas/Comida/Okonomiyaki">Okonomiyaki</a></li>
+                            <li><a href="~/Comidas/Comida/Okonomiyaki">Okonomiyaki</a></li>*@
+                    </ul>
+                </li>
+                <li><a href="~/Administrador" class="seccion">Administrador</a></li>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a href="~/Account/Logout">Cerrar sesión</a></li>
+                }
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <h2>Bienvenido:  @User.Identity.Name</h2>
+            <hr />
+        }
+
+        @RenderBody()
+
+    </main>
+
+    <footer>
+        &#169; Elaborado por: Mayra Isabel De La Cruz Alvarado - Ezequiel Gustavo López Hernández
+    </footer>
+</body>
+</html>

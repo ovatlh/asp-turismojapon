@@ -1,0 +1,55 @@
+﻿@model aspTurismoJapon.Models.Atracciones
+@{
+    ViewData["Title"] = "Atraccion";
+    Layout = "_Layout";
+}
+
+<div class="contenidoAtraccion">
+    <section class="portadaAtraccion">
+        <img src="~/images/atracciones/@(Model.Id).jpg" alt="@Model.Titulo">
+    </section>
+
+    <section class="datosAtraccion">
+        <h2>@Model.Titulo</h2>
+        <span>Tipo de atracción:</span>
+        <a href="~/Atracciones/@Model.IdTipoNavigation.Tipo.Replace(" ", "_")">@Model.IdTipoNavigation.Tipo</a>
+        <span>Lo puedes encontrar en la ciudad de:</span>
+        <a href="~/Ciudad/@Model.IdCiudadNavigation.Nombre.Replace(" ", "_")">@Model.IdCiudadNavigation.Nombre</a>
+    </section>
+
+    <section class="infAtraccion">
+        @*<h3>Información sobre el <strong>Jardín Kawachi Fuji de Kitakyushu</strong></h3>*@
+
+        @Html.Raw(Model.Contenido)
+
+        @*<hr>
+        <p>
+            El Jardín Kawachi Fuji de Kitakyushu (河内藤園, Kawachi Fujien) es un jardín privado famoso por la gran
+            cantidad de Wisterias o Glicinas que hay plantadas. Lo más popular son los túneles de 100 metros de
+            longitud cubiertos de flores de glicina.
+        </p>
+
+        <h3>Cómo llegar al <strong>Jardín Kawachi Fuji de Kitakyushu</strong></h3>
+        <hr>
+        <h4>Paso 1</h4>
+        <p>
+            Desde la estación Kokura por la línea 'Kagoshima Line' en dirección a Arao durante 4 paradas (14 minutos)
+            hasta llegar a la estación de Yahata.
+        </p>
+        <h4>Precio</h4>
+        <p>280¥.</p>
+        <h4>Paso 2</h4>
+        <p>Desde allí habrá que coger un autobús gratuito que lleva a los turistas hasta el parque.</p>
+        <h4>Precio</h4>
+        <p>0¥.</p>
+
+        <h3>Horario y Precio del <strong>Jardín Kawachi Fuji de Kitakyushu</strong></h3>
+        <hr>
+        <h4>Horario</h4>
+        <p>De 9:00 a 18:00.</p>
+        <h4>Cerrado</h4>
+        <p>Solo abre de finales de Abril a mediados de Mayo y en Otoño.</p>
+        <h4>Precio</h4>
+        <p>1000¥.</p>*@
+    </section>
+</div>

@@ -1,0 +1,131 @@
+﻿@model IEnumerable<aspTurismoJapon.Models.Comidas>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<div class="titleComidas">
+    <h2>Comidas populares en Japón</h2>
+</div>
+
+<div class="listaComidas">
+    @foreach (var item in Model)
+    {
+        <div class="cardComida">
+            <section class="imageComida">
+                <img src="~/images/comidas/@(item.Id).jpg" alt="">
+            </section>
+            <section class="textComida">
+                <h3>@item.Nombre</h3>
+                <p>Esta comida es típica de la ciudad de <strong>@item.IdCiudadNavigation.Nombre</strong></p>
+                <section>
+                    <a href="~/Comida/@item.Nombre.Replace(" ", "_")">Ver información</a>
+                </section>
+            </section>
+        </div>
+    }
+
+    @*<div class="cardComida">
+            <section class="imageComida">
+                <img src="images/okonomiyaki.jpg" alt="">
+            </section>
+            <section class="textComida">
+                <h3>Okonomiyaki (Pizza Japonesa)</h3>
+                <p>Esta comida es típica de la ciudad de <strong>Osaka</strong></p>
+                <section>
+                    <a href="Comida.html">Ver información</a>
+                </section>
+            </section>
+        </div>
+
+        <div class="cardComida">
+            <section class="imageComida">
+                <img src="images/okonomiyaki.jpg" alt="">
+            </section>
+            <section class="textComida">
+                <h3>Okonomiyaki (Pizza Japonesa)</h3>
+                <p>Esta comida es típica de la ciudad de <strong>Osaka</strong></p>
+                <section>
+                    <a href="Comida.html">Ver información</a>
+                </section>
+            </section>
+        </div>
+
+        <div class="cardComida">
+            <section class="imageComida">
+                <img src="images/okonomiyaki.jpg" alt="">
+            </section>
+            <section class="textComida">
+                <h3>Okonomiyaki (Pizza Japonesa)</h3>
+                <p>Esta comida es típica de la ciudad de <strong>Osaka</strong></p>
+                <section>
+                    <a href="Comida.html">Ver información</a>
+                </section>
+            </section>
+        </div>
+
+        <div class="cardComida">
+            <section class="imageComida">
+                <img src="images/okonomiyaki.jpg" alt="">
+            </section>
+            <section class="textComida">
+                <h3>Okonomiyaki (Pizza Japonesa)</h3>
+                <p>Esta comida es típica de la ciudad de <strong>Osaka</strong></p>
+                <section>
+                    <a href="Comida.html">Ver información</a>
+                </section>
+            </section>
+        </div>
+
+        <div class="cardComida">
+            <section class="imageComida">
+                <img src="images/okonomiyaki.jpg" alt="">
+            </section>
+            <section class="textComida">
+                <h3>Okonomiyaki (Pizza Japonesa)</h3>
+                <p>Esta comida es típica de la ciudad de <strong>Osaka</strong></p>
+                <section>
+                    <a href="Comida.html">Ver información</a>
+                </section>
+            </section>
+        </div>
+
+        <div class="cardComida">
+            <section class="imageComida">
+                <img src="images/okonomiyaki.jpg" alt="">
+            </section>
+            <section class="textComida">
+                <h3>Okonomiyaki (Pizza Japonesa)</h3>
+                <p>Esta comida es típica de la ciudad de <strong>Osaka</strong></p>
+                <section>
+                    <a href="Comida.html">Ver información</a>
+                </section>
+            </section>
+        </div>
+
+        <div class="cardComida">
+            <section class="imageComida">
+                <img src="images/okonomiyaki.jpg" alt="">
+            </section>
+            <section class="textComida">
+                <h3>Okonomiyaki (Pizza Japonesa)</h3>
+                <p>Esta comida es típica de la ciudad de <strong>Osaka</strong></p>
+                <section>
+                    <a href="Comida.html">Ver información</a>
+                </section>
+            </section>
+        </div>
+
+        <div class="cardComida">
+            <section class="imageComida">
+                <img src="images/okonomiyaki.jpg" alt="">
+            </section>
+            <section class="textComida">
+                <h3>Okonomiyaki (Pizza Japonesa)</h3>
+                <p>Esta comida es típica de la ciudad de <strong>Osaka</strong></p>
+                <section>
+                    <a href="Comida.html">Ver información</a>
+                </section>
+            </section>
+        </div>*@
+</div>

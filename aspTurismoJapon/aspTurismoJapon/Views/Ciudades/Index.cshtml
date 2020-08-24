@@ -1,0 +1,136 @@
+﻿@model IEnumerable<aspTurismoJapon.Models.Ciudades>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<div class="listaCiudades">
+    @foreach (var item in Model)
+    {
+        <div class="cardCiudad">
+            <div class="fondoCiudad">
+                <img src="~/images/ciudades/@(item.Id).jpg" alt="@item.Nombre">
+                <div class="datos">
+                    <div class="contenido">
+                        <p class="seccion">Turismo en Japón - Ciudades</p>
+                        <h1 class="ciudad">@item.Nombre</h1>
+                        <p class="ayuda">Pulsa en Ver más para más información sobre la ciudad</p>
+                        <a href="~/Ciudad/@item.Nombre.Replace(" ", "_")" class="botonMas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    @*<div class="cardCiudad">
+            <div class="fondoCiudad">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="datos">
+                    <div class="contenido">
+                        <p class="seccion">Turismo en Japón - Ciudades</p>
+                        <h1 class="ciudad">Tokyo (Tokyo-shi)</h1>
+                        <p class="ayuda">Pulsa en Ver más para más información sobre la ciudad</p>
+                        <a href="Ciudad.html" class="botonMas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardCiudad">
+            <div class="fondoCiudad">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="datos">
+                    <div class="contenido">
+                        <p class="seccion">Turismo en Japón - Ciudades</p>
+                        <h1 class="ciudad">Tokyo (Tokyo-shi)</h1>
+                        <p class="ayuda">Pulsa en Ver más para más información sobre la ciudad</p>
+                        <a href="Ciudad.html" class="botonMas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardCiudad">
+            <div class="fondoCiudad">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="datos">
+                    <div class="contenido">
+                        <p class="seccion">Turismo en Japón - Ciudades</p>
+                        <h1 class="ciudad">Tokyo (Tokyo-shi)</h1>
+                        <p class="ayuda">Pulsa en Ver más para más información sobre la ciudad</p>
+                        <a href="Ciudad.html" class="botonMas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardCiudad">
+            <div class="fondoCiudad">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="datos">
+                    <div class="contenido">
+                        <p class="seccion">Turismo en Japón - Ciudades</p>
+                        <h1 class="ciudad">Tokyo (Tokyo-shi)</h1>
+                        <p class="ayuda">Pulsa en Ver más para más información sobre la ciudad</p>
+                        <a href="Ciudad.html" class="botonMas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardCiudad">
+            <div class="fondoCiudad">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="datos">
+                    <div class="contenido">
+                        <p class="seccion">Turismo en Japón - Ciudades</p>
+                        <h1 class="ciudad">Tokyo (Tokyo-shi)</h1>
+                        <p class="ayuda">Pulsa en Ver más para más información sobre la ciudad</p>
+                        <a href="Ciudad.html" class="botonMas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardCiudad">
+            <div class="fondoCiudad">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="datos">
+                    <div class="contenido">
+                        <p class="seccion">Turismo en Japón - Ciudades</p>
+                        <h1 class="ciudad">Tokyo (Tokyo-shi)</h1>
+                        <p class="ayuda">Pulsa en Ver más para más información sobre la ciudad</p>
+                        <a href="Ciudad.html" class="botonMas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardCiudad">
+            <div class="fondoCiudad">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="datos">
+                    <div class="contenido">
+                        <p class="seccion">Turismo en Japón - Ciudades</p>
+                        <h1 class="ciudad">Tokyo (Tokyo-shi)</h1>
+                        <p class="ayuda">Pulsa en Ver más para más información sobre la ciudad</p>
+                        <a href="Ciudad.html" class="botonMas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardCiudad">
+            <div class="fondoCiudad">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="datos">
+                    <div class="contenido">
+                        <p class="seccion">Turismo en Japón - Ciudades</p>
+                        <h1 class="ciudad">Tokyo (Tokyo-shi)</h1>
+                        <p class="ayuda">Pulsa en Ver más para más información sobre la ciudad</p>
+                        <a href="Ciudad.html" class="botonMas">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+</div>  

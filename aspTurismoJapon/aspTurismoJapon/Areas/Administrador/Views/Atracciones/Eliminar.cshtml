@@ -1,0 +1,38 @@
+﻿@model  aspTurismoJapon.Models.Atracciones
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "_Layout";
+}
+
+<section class="class_acciones">
+    <table>
+        <tbody>
+        <td>
+            <h1>Administrador - Atracciones</h1>
+        </td>
+        <td>
+            <a href="~/Administrador/Atracciones">Eliminando Atraccion</a>
+        </td>
+        </tbody>
+    </table>
+</section>
+
+<form action="~/Administrador/Atracciones/Eliminar" method="post">
+    <section class="class_eliminacion">
+        <input type="hidden" asp-for="Id" />
+        <h1>¿ Estas seguro de querer eliminar esta atraccion ?</h1>
+
+        <b>
+            <p>@Model.Titulo</p>
+        </b>
+
+        <table>
+            <td>
+                <input type="submit" value="Eliminar">
+            </td>
+            <td>
+                <a href="~/Administrador/Atracciones">Cancelar</a>
+            </td>
+        </table>
+    </section>
+</form>

@@ -1,0 +1,380 @@
+﻿html,
+body {
+    background-color: whitesmoke;
+    margin: 0;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    background-color: whitesmoke;
+}
+
+body {
+    background-color: white;
+    padding-top: 100px;
+}
+
+header {
+    background-color: whitesmoke;
+    padding: 0 100px;
+    height: 100px;
+    width: calc(100% - 200px);
+    border-bottom: 1px solid black;
+    top: 0;
+    position: fixed;
+}
+
+    header h1 {
+        margin: 0px;
+        float: left;
+    }
+
+        header h1 a {
+            text-decoration: none;
+            color: black;
+            line-height: 100px;
+            padding: 25px;
+        }
+
+    header nav {
+        height: 100px;
+        float: right;
+    }
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav > ul li {
+    height: 100px;
+    width: 120px;
+    float: left;
+}
+
+    nav > ul li a {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        display: block;
+        line-height: 100px;
+        text-align: center;
+    }
+
+nav ul li:hover a {
+    background-color: gray;
+}
+
+nav ul li ul {
+    display: none;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul ul li {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+    nav ul ul li a {
+        line-height: 50px;
+    }
+
+        nav ul ul li a:hover {
+            background-color: rgb(236, 236, 236);
+        }
+
+main {
+    min-height: 300px;
+    margin: 20px;
+}
+
+footer {
+    background-color: whitesmoke;
+    clear: both;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    border-top: 1px solid black;
+}
+
+    footer h6 {
+        margin: 0;
+        padding: 50px;
+    }
+
+
+/* Estilo - Registros - Acciones */
+
+.class_acciones h1 {
+    font-size: xx-large;
+}
+
+.class_acciones table {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+    .class_acciones table tbody td {
+        width: 70%;
+    }
+
+        .class_acciones table tbody td:last-child {
+            text-align: right;
+        }
+
+            .class_acciones table tbody td:last-child a {
+                background-color: whitesmoke;
+                color: black;
+                border: 1px solid gray;
+                display: block;
+                line-height: 100px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+                .class_acciones table tbody td:last-child a:hover {
+                    background-color: #303030;
+                    font-weight: bold;
+                    color: white;
+                }
+
+.class_acciones_registros h1 {
+    font-size: xx-large;
+}
+
+.class_acciones_registros table {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+    .class_acciones_registros table tbody td {
+        width: calc(100% / 3);
+    }
+
+.class_registros a {
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid gray;
+    display: block;
+    line-height: 100px;
+    text-align: center;
+    text-decoration: none;
+}
+
+        .class_registros a:hover {
+            background-color: #303030;
+            font-weight: bold;
+            color: white;
+        }
+
+
+/* Estilo - Registros - Lista*/
+
+.class_contenido {
+    background-color: whitesmoke;
+    padding: 5px;
+}
+
+    .class_contenido table {
+        width: 100%;
+        border: 1px solid gray;
+    }
+
+        .class_contenido table thead {
+            background-color: gray;
+        }
+
+            .class_contenido table thead tr th:nth-child(1) {
+                width: 50px;
+            }
+
+            .class_contenido table thead tr th:last-child {
+                width: 160px;
+            }
+
+        .class_contenido table tbody tr:hover {
+            background-color: #a0a0a0;
+        }
+
+        .class_contenido table tbody tr td:first-child {
+            text-align: center;
+        }
+
+    .class_contenido > table > tbody > tr > td {
+        padding: 0 10px;
+    }
+
+        .class_contenido > table > tbody > tr > td:last-child {
+            padding: 0px;
+        }
+
+
+    /* Acciones de Editar y Eliminar */
+
+    .class_contenido table tbody tr td table td {
+        width: 50%;
+    }
+
+        .class_contenido table tbody tr td table td a {
+            background-color: white;
+            color: black;
+            line-height: 30px;
+            display: block;
+            width: 100%;
+            float: left;
+            text-decoration: none;
+            text-align: center;
+        }
+
+            .class_contenido table tbody tr td table td a:hover {
+                background-color: #303030;
+                font-weight: bold;
+                color: white;
+            }
+
+
+/* Estilo - Registro - Eliminacion */
+
+.class_eliminacion {
+    background-color: whitesmoke;
+    padding: 5px;
+    text-align: center;
+}
+
+    .class_eliminacion p {
+        background-color: rgb(129, 31, 31);
+        padding: 20px;
+        color: white;
+    }
+
+    .class_eliminacion table {
+        width: 100%;
+    }
+
+        .class_eliminacion table thead {
+            background-color: gray;
+        }
+
+        .class_eliminacion table td {
+            width: 50%;
+            border: 1px solid gray;
+        }
+
+            .class_eliminacion table td a,
+            .class_eliminacion table td input {
+                background-color: white;
+                color: black;
+                border: none;
+                line-height: 80px;
+                height: 80px;
+                display: block;
+                width: 100%;
+                text-decoration: none;
+                font-size: xx-large;
+            }
+
+                .class_eliminacion table td a:hover,
+                .class_eliminacion table td input:hover {
+                    background-color: #303030;
+                    font-weight: bold;
+                    color: white;
+                }
+
+
+/* Estilo - Registro - Agregar - Editar */
+
+.class_agregar_editar {
+    background-color: whitesmoke;
+    padding: 5px;
+    min-height: 100px;
+}
+
+    .class_agregar_editar label {
+        display: block;
+        font-size: larger;
+        font-weight: bold;
+        background-color: gray;
+        padding: 10px;
+    }
+
+    .class_agregar_editar input {
+        margin: 0;
+        padding: 5px;
+        margin-bottom: 20px;
+        width: calc(100% - 10px);
+        border: none;
+        border-bottom: 1px solid gray;
+        background-color: white;
+        font-size: larger;
+    }
+
+    .class_agregar_editar select {
+        margin: 0;
+        padding: 5px;
+        margin-bottom: 20px;
+        width: 100%;
+        background-color: white;
+        border: none;
+        border-bottom: 1px solid gray;
+        font-size: larger;
+    }
+
+.class_agregar_editar_acciones table {
+    width: 100%;
+}
+
+    .class_agregar_editar_acciones table td {
+        width: 50%;
+        /* background-color: green; */
+        text-align: center;
+        border: 1px solid gray;
+    }
+
+.class_agregar_editar_acciones input,
+.class_agregar_editar_acciones a {
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: white;
+    color: black;
+    border: none;
+    line-height: 50px;
+    height: 50px;
+    width: 100%;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+    .class_agregar_editar_acciones input:hover,
+    .class_agregar_editar_acciones a:hover {
+        background-color: #303030;
+        font-weight: bold;
+        color: white;
+    }
+
+
+/* Estilo - Errores */
+
+.class_errores {
+    background-color: whitesmoke;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+    .class_errores h1 {
+        background-color: #8A1919;
+        color: white;
+        margin: 0;
+        display: block;
+        font-weight: bold;
+        padding: 10px;
+    }
